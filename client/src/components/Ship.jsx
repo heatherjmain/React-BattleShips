@@ -16,8 +16,10 @@ const Ship = (props) => {
 
   }
 
+  const placedShip = " ship-placed-" + props.placed
+
   return(
-    <div onClick={handleShipClick} onContextMenu={handleShipClick}>
+    <div className={placedShip} onClick={handleShipClick} onContextMenu={handleShipClick}>
       <img className={props.imageName} src={props.image} alt={props.name} />
       <p className="ship-name-text">{props.name}</p>
     </div>

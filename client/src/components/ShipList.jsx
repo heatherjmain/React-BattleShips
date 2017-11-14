@@ -5,7 +5,7 @@ const ShipList = (props) => {
 
   const shipNodes = props.ships.map(function(ship) {
     return (
-      <Ship name={ship.name} image={ship.image} imageName={ship.imageName} key={ship.id} id={ship.id} updateSelectedShip={props.updateSelectedShip} updateSelectedShipAndFlip={props.updateSelectedShipAndFlip}></Ship>
+      <Ship name={ship.name} image={ship.image} imageName={ship.imageName} key={ship.id} id={ship.id} placed={ship.placed} updateSelectedShip={props.updateSelectedShip} updateSelectedShipAndFlip={props.updateSelectedShipAndFlip}></Ship>
     )
   })
 

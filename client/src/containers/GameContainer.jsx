@@ -209,8 +209,11 @@ class GameContainer extends React.Component {
 
           <div className="instructions">
             <p>Place your ships...</p>
-            <p>Left click to place a ship horizontally</p>
-            <p>Right click to place a ship vertically</p>
+            <p>Choose a ship and then click on the map to position it!</p>
+            <div className="instructions-small">
+              <p>Left click the ship to place it horizontally</p>
+              <p>Right click the ship to place it vertically</p>
+            </div>
           </div>
 
 
