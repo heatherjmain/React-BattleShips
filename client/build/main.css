@@ -1,0 +1,103 @@
+*{
+  font-family: "Lobster", cursive;
+  text-shadow: 2px 2px #9ec3ff;
+}
+
+.title{
+  text-align: center;
+  font-size: 3em;
+}
+
+.map-and-ships{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.ships{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+  margin: 10px;
+}
+
+.ship-name-text{
+  font-size: 0.95em;
+  margin-top: -5px;
+}
+
+.grid{
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw;
+  grid-template-rows: 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw;
+  grid-gap: 0.1vw;
+  background-color: white;
+  color: #111;
+  min-width: 50%;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+.grid-cell{
+  display: flex;
+  background-color: #9ec3ff;
+}
+
+.aircraftcarrier-cell{
+  background-color: #EC5329;
+}
+
+.destroyer-cell{
+  background-color: #282E89;
+}
+
+.submarine-cell{
+  background-color: #2E481C;
+}
+
+.smallship1-cell{
+  background-color: #0A0809;
+}
+
+.smallship2-cell{
+  background-color: #0A0809;
+}
+
+.battleship-cell{
+  background-color: #D42D2A;
+}
+
+.battleship{
+  width: 250px;
+  height: auto;
+}
+
+.aircraftCarrier{
+  width: 200px;
+  height: auto;
+}
+
+.destroyer{
+  width: 180px;
+  height: auto;
+}
+
+.submarine{
+  width: 140px;
+  height: auto;
+}
+
+.smallship1{
+  width: 80px;
+  height: auto;
+}
+
+.smallship2{
+  width: 80px;
+  height: auto;
+}
