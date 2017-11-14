@@ -19,10 +19,11 @@
 
 .ships{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex: 1;
   text-align: center;
   margin: 10px;
+  flex: 1;
 }
 
 .ship-name-text{
@@ -38,9 +39,19 @@
   grid-gap: 0.1vw;
   background-color: white;
   color: #111;
-  min-width: 50%;
   margin-left: 10%;
   margin-top: 10%;
+  flex: 2;
+}
+
+.instructions{
+  flex: 1;
+  margin-top: 15%;
+  margin-right: 5%;
+}
+
+.instructions p{
+  font-family: "Arial";
 }
 
 .grid-cell{

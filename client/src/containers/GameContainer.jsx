@@ -207,6 +207,13 @@ class GameContainer extends React.Component {
         <div className="map-and-ships">
           <Grid grid={this.state.grid} checkGridPosition={this.checkGridPosition} />
 
+          <div className="instructions">
+            <p>Place your ships...</p>
+            <p>Left click to place a ship horizontally</p>
+            <p>Right click to place a ship vertically</p>
+          </div>
+
+
           <div className="ships">
             <ShipList ships={this.state.ships} updateSelectedShip={this.updateSelectedShip} updateSelectedShipAndFlip={this.updateSelectedShipAndFlip} />
           </div>
