@@ -5,7 +5,7 @@ const Grid = (props) => {
 
   const cellNodes = props.grid.map(function(cell, index) {
     return (
-      <Cell key={index} location={index} checkGridPosition={props.checkGridPosition} grid={props.grid} />
+      <Cell key={index} location={index}  grid={props.grid} onClick={props.onClick} />
     )
   })
 
