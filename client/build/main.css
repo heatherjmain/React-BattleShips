@@ -6,6 +6,16 @@
 .title{
   text-align: center;
   font-size: 3em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.choose-player-text{
+  font-family: "Arial";
+  font-size: 1em;
+  text-shadow: none;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .map-and-ships{
@@ -18,9 +28,6 @@
 }
 
 .ships{
-  display: flex;
-  flex-direction: column;
-  flex: 1;
   text-align: center;
   margin: 10px;
   flex: 2;
@@ -39,14 +46,14 @@
   grid-gap: 0.1vw;
   background-color: white;
   color: #111;
-  margin-left: 10%;
-  margin-top: 10%;
-  flex: 4;
+  /*margin-left: 10%;*/
+  /*margin-top: 2%;*/
+  /*flex: 4;*/
 }
 
 .instructions{
-  flex: 3;
-  margin-top: 15%;
+  /*flex: 3;
+  margin-top: 15%;*/
   text-align: center;
 }
 
@@ -121,4 +128,23 @@
 
 .ship-placed-true{
   opacity: 0.25;
+}
+
+.player-select-buttons{
+  /*display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;*/
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.player-button{
+  width: 10vw;
+  font-family: "Arial";
+  font-size: 1em;
+  text-shadow: none;
+  margin-top: -20%;
+  margin-left: 10px;
+  margin-right: 10px;
 }

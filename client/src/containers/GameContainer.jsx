@@ -133,26 +133,6 @@ class GameContainer extends React.Component {
   }
 
 
-
-  // if ((shipPosition.length === shipLength) && (this.onSameRow(shipPosition))) {
-  //   const newGrid = [...this.state.grid]
-  //   for (let cell of shipPosition) {
-  //     newGrid[cell] = this.state.selectedShip.imageName
-  //   }
-  //   this.setState({
-  //     grid: newGrid
-  //   })
-  //
-  //   this.setState({
-  //     selectedShip: null
-  //   })
-
-
-
-
-
-
-
   checkIfItsMyGuess(currentGuess) {
     console.log("currentGuess", currentGuess)
     if (currentGuess.guessingPlayer !== this.state.player) {
@@ -160,22 +140,12 @@ class GameContainer extends React.Component {
     }
   }
 
-  // receiveGuess(guess){
-  //   // console.log(guess)
-  //   this.setState ({
-  //     currentGuess: guess
-  //   })
-  //   this.checkIfItsMyGuess(this.state.currentGuess)
-  //   // console.log("currentGuess", this.state.currentGuess)
-  // }
-
-
-
-
   assignPlayer(player) {
-    this.setState({
-      player: player
-    })
+    if (this.state.player === null) {
+      this.setState({
+        player: player
+      })
+    }
   }
 
 
@@ -295,7 +265,7 @@ class GameContainer extends React.Component {
 
   checkGridPosition(location) {
     // console.log(this.state.grid[location])
-    if (this.state.grid[location].imageName === null) {
+    if (this.state.grid[location].imageName === null && this.state.player !== null) {
       this.checkPositionAvailable(location, this.state.selectedShip.length, this.state.selectedShip.direction)
       // console.log(this.state.selectedShip.length)
     }
@@ -306,29 +276,35 @@ class GameContainer extends React.Component {
       <div>
 
         <h1 className="title">BattleShips</h1>
+        <h3 className="choose-player-text">Which player are you?</h3>
+
+        <div>
+          <PlayerSelectButtons assignPlayer={this.assignPlayer} />
+        </div>
+
+        <div className="instructions">
+          {/* <p>Place your ships...</p> */}
+          <p>Choose a ship and then click on the map to position it!</p>
+
+          <div className="instructions-small">
+            <p>Left click the ship to place it horizontally</p>
+            <p>Right click the ship to place it vertically</p>
+          </div>
+
+        </div>
 
         <div className="map-and-ships">
           <Grid grid={this.state.grid} onClick={this.checkGridPosition} emitGuess={this.emitGuess} />
-          <Grid grid={this.state.oppGrid} onClick={this.emitGuess}/>
-          <div className="instructions">
-            <p>Place your ships...</p>
-            <p>Choose a ship and then click on the map to position it!</p>
-            <div className="instructions-small">
-              <p>Left click the ship to place it horizontally</p>
-              <p>Right click the ship to place it vertically</p>
-            </div>
-          </div>
-
 
           <div className="ships">
             <ShipList ships={this.state.ships} updateSelectedShip={this.updateSelectedShip} updateSelectedShipAndFlip={this.updateSelectedShipAndFlip} />
           </div>
 
+          <Grid grid={this.state.oppGrid} onClick={this.emitGuess}/>
+
         </div>
 
-        <div>
-          <PlayerSelectButtons assignPlayer={this.assignPlayer} />
-        </div>
+
 
       </div>
     )

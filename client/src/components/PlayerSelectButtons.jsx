@@ -10,10 +10,10 @@ const PlayerSelectButtons = (props) => {
     props.assignPlayer("Player 2")
   }
 
-  return (
-    <div className="play-select-buttons">
-      <button type="button" onClick={handlePlayer1Click}>Player 1</button>
-      <button type="button" onClick={handlePlayer2Click}>Player 2</button>
+  return (    
+    <div className="player-select-buttons">
+      <button className="player-button" type="button" onClick={handlePlayer1Click}>Player 1</button>
+      <button className="player-button" type="button" onClick={handlePlayer2Click}>Player 2</button>
     </div>
   )
 }
