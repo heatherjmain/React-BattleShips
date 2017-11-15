@@ -101,11 +101,14 @@ class GameContainer extends React.Component {
     console.log("Guess is being checked ", currentGuess)
     const checkCell = this.state.grid[currentGuess.guess]
     console.log("checkCell", checkCell)
-    if (checkCell.imageName !== null  && checkCell.status !== "hit"  && checkCell.status !== "miss") {
+    // if (checkCell.imageName !== null  && checkCell.status !== "🔥"  && checkCell.status !== "X") {
+    if (checkCell.imageName === null) {
       // console.log("HIT")
-      this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "hit"})
+      // this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "🔥"})
+      this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "X"})
     } else {
-      this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "miss"})
+      // this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "X"})
+      this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "🔥"})
 
     }
     // console.log("oppGrid", this.state.oppGrid);
@@ -271,7 +274,8 @@ class GameContainer extends React.Component {
         if (verticalShipPosition.length === shipLength) {
           const newGrid = [...this.state.grid]
           for (let cell of verticalShipPosition) {
-            newGrid[cell] = this.state.selectedShip.imageName
+            const cellContents = {imageName: this.state.selectedShip.imageName, status:null}
+            newGrid[cell] = cellContents
           }
           this.setState({
             grid: newGrid
