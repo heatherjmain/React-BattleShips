@@ -101,13 +101,9 @@ class GameContainer extends React.Component {
     console.log("Guess is being checked ", currentGuess)
     const checkCell = this.state.grid[currentGuess.guess]
     console.log("checkCell", checkCell)
-    // if (checkCell.imageName !== null  && checkCell.status !== "🔥"  && checkCell.status !== "X") {
     if (checkCell.imageName === null) {
-      // console.log("HIT")
-      // this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "🔥"})
-      this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "X"})
+      this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "❌"})
     } else {
-      // this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "X"})
       this.socket.emit("guessResult", {guessingPlayer: currentGuess.guessingPlayer, guess: currentGuess.guess, status: "🔥"})
 
     }
@@ -294,13 +290,20 @@ class GameContainer extends React.Component {
         </div>
 
         <div className="map-and-ships">
-          <Grid grid={this.state.grid} onClick={this.checkGridPosition} emitGuess={this.emitGuess} />
+
+          <div>
+            <h3 className="grid-title">My Fleet</h3>
+            <Grid grid={this.state.grid} onClick={this.checkGridPosition} emitGuess={this.emitGuess} />
+          </div>
 
           <div className="ships">
             <ShipList ships={this.state.ships} updateSelectedShip={this.updateSelectedShip} updateSelectedShipAndFlip={this.updateSelectedShipAndFlip} />
           </div>
 
-          <Grid grid={this.state.oppGrid} onClick={this.emitGuess}/>
+          <div>
+            <h3 className="grid-title">Enemy Fleet</h3>
+            <Grid grid={this.state.oppGrid} onClick={this.emitGuess}/>
+          </div>
 
         </div>
 

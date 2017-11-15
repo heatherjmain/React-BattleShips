@@ -1,6 +1,7 @@
 *{
   font-family: "Lobster", cursive;
   text-shadow: 2px 2px #9ec3ff;
+  background-color: #fffcea;
 }
 
 .title{
@@ -8,6 +9,14 @@
   font-size: 3em;
   margin-bottom: 0;
   margin-top: 0;
+  background-color: #282E89;
+  color: #fffcea;
+}
+
+.grid-title{
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 1.5em;
 }
 
 .choose-player-text{
@@ -34,7 +43,7 @@
 }
 
 .ship-name-text{
-  font-size: 0.95em;
+  font-size: 1.25em;
   margin-top: -5px;
 }
 
@@ -44,7 +53,7 @@
   grid-template-columns: 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw;
   grid-template-rows: 4vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw;
   grid-gap: 0.1vw;
-  background-color: white;
+  background-color: #fffcea;
   color: #111;
   /*margin-left: 10%;*/
   /*margin-top: 2%;*/
@@ -70,6 +79,7 @@
 .grid-cell{
   display: flex;
   background-color: #9ec3ff;
+  font-size: 2em;
 }
 
 .aircraftcarrier-cell{
@@ -147,4 +157,19 @@
   margin-top: -20%;
   margin-left: 10px;
   margin-right: 10px;
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  -webkit-box-shadow: 5px 5px 8px #666666;
+  -moz-box-shadow: 5px 5px 8px #666666;
+  box-shadow: 5px 5px 8px #666666;
+  background: #A4C3FA;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.player-button:hover {
+  background: #282E89;
+  text-decoration: none;
+  color: white;
 }
