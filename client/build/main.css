@@ -79,7 +79,7 @@
 .grid-cell{
   display: flex;
   background-color: #9ec3ff;
-  font-size: 2em;
+  font-size: 3vw;
 }
 
 .aircraftcarrier-cell{
