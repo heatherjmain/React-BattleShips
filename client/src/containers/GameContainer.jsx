@@ -1,3 +1,9 @@
+//to run
+// npm install
+// nodemon server.js
+// npm run build
+
+
 import React from "react"
 import ShipList from "../components/ShipLIst.jsx"
 import Grid from "../components/Grid.jsx"
