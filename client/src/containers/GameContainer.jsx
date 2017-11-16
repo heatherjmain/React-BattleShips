@@ -84,7 +84,7 @@ class GameContainer extends React.Component {
     }
 
     // this.socket = io("http://localhost:3001");
-    this.socket = io("https://git.heroku.com/react-battleships.git");
+    this.socket = io("https://react-battleships.herokuapp.com/");
     this.socket.on('confirmGuess', this.checkIfItsMyGuess.bind(this));
     this.socket.on('confirmGuessResult', this.updateGrid.bind(this));
 
